@@ -6,7 +6,7 @@
 /*   By: acherraq <acherraq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 19:01:20 by acherraq          #+#    #+#             */
-/*   Updated: 2023/12/11 12:15:11 by acherraq         ###   ########.fr       */
+/*   Updated: 2024/05/06 19:56:24 by acherraq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+typedef struct s_list
+{
+    int content;
+    int index;
+    struct  s_list *next;
+} t_list;
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t count, size_t size);

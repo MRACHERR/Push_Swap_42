@@ -1,5 +1,5 @@
 NAME = push_swap
-SOURCES = push_swap.c 
+SOURCES = push_swap.c utils.c 
 OBJECTS = $(SOURCES:.c=.o)
 
 CC = cc
