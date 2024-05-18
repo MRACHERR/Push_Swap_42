@@ -1,4 +1,4 @@
-#include <push_swap.h>
+#include "push_swap.h"
 
 void arg_verify(int argc, char **argv)
 {
@@ -7,7 +7,7 @@ void arg_verify(int argc, char **argv)
     int     j;
 
     list = NULL;
-    list = get_list_arg(argc, argv);
+    list = get_list_from_arg(argc, argv);
     is_empty(argv);
     there_is_deplicate(list);
     i = 0;
@@ -47,7 +47,7 @@ void is_empty(char **argv)
             if (ft_isdigit(argv[i][j]))
                 find = 1;
         }
-        if (find = 0 || !argv[i][0])
+        if ((find = 0) || !argv[i][0])
             handle_errors("empty");
         i++;
     }
@@ -60,17 +60,14 @@ void    there_is_deplicate(char **list)
     int j;
 
     i = 0;
-    if (ft_atoi(list[0]) < -2147483648 || ft_atoi(list[0]) > 2147483647)
+    if (ft_atoi(list[0]) < INT_MIN || ft_atoi(list[0]) > INT_MAX)
 		return (handle_errors("verify int input"));
     while (list[i])
     {
         j = i + 1;
         while (list[j])
-        {
-            
-            if (ft_atoi(list[i]) == ft_atoi(list[j] 
-                || (ft_atoi(str[j]) < -2147483648
-                        || ft_atoi(str[j]) > 2147483647)))
+        {  
+            if (ft_atoi(list[i]) == ft_atoi(list[j]) || ft_atoi(list[j]) < INT_MIN || ft_atoi(list[j]) > INT_MAX)
                 return(handle_errors("error Deplicate"));
             j++;
         }
