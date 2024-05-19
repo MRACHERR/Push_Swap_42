@@ -58,3 +58,9 @@ int ft_lstsize(t_list *lst)
     }
     return (i);
 }
+
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+    new->next = *lst;
+    *lst = new;
+}

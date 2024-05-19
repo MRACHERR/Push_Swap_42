@@ -51,11 +51,12 @@ char    **get_list_from_arg(int argc, char **argv)
 
     list = NULL;
     args = NULL;
-    i = 0;
+    i = 1;
     while (i < argc)
     {
         args = ft_strjoin(args, argv[i]);
         args = ft_strjoin(args, " ");
+        i++;
     }
     list = ft_split(args, ' ');
     free(args);
@@ -106,25 +107,25 @@ void    get_index(t_list **a)
     }
 }
 
-// void    sort(t_list **a, t_list **b)
-// {
-//     if (ft_lstsize(*a) == 2)
-//     {
-//         if ((*a)->content > (*a)->next->content)
-//             sa(a);
-//     }
-//     else if (ft_lstsize(*a) == 3)
-// 		sort3(a);
-// 	else if (ft_lstsize(*a) == 4)
-// 		sort4(a, b);
-// 	else if (ft_lstsize(*a) == 5)
-// 		sort5(a, b);
-//     else
-// 	{
-// 		if (ft_lstsize(*a) <= 100)
-// 			push_a_to_b(a, b, 15);
-// 		else if (ft_lstsize(*a) >= 100)
-// 			push_a_to_b(a, b, 35);
-// 		turn_to_a(a, b);
-// 	}
-// }
+void    sort(t_list **a, t_list **b)
+{
+    if (ft_lstsize(*a) == 2)
+    {
+        if ((*a)->content > (*a)->next->content)
+            sa(a);
+    }
+    else if (ft_lstsize(*a) == 3)
+		sort3(a);
+	else if (ft_lstsize(*a) == 4)
+		sort4(a, b);
+	else if (ft_lstsize(*a) == 5)
+		sort5(a, b);
+    // else
+	// {
+	// 	if (ft_lstsize(*a) <= 100)
+	// 		push_a_to_b(a, b, 15);
+	// 	else if (ft_lstsize(*a) >= 100)
+	// 		push_a_to_b(a, b, 35);
+	// 	turn_to_a(a, b);
+	// }
+}
