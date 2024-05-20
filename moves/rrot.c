@@ -20,7 +20,7 @@ void    rrot(t_list **s)
 void    rra(t_list **s)
 {
     ft_printf("rra\n");
-    rot(s);
+    rrot(s);
 }
 
 void    rrb(t_list **s)

@@ -89,13 +89,14 @@ void    get_index(t_list **a)
     t_list  *max_node;
 
     max_index = ft_lstsize(*a) - 1;
+    //ft_printf("%d", max_index);
     while (max_index)
     {
         tmp = *a;
         max_value = INT_MIN;
         while (tmp)
         {
-            if(tmp->content > max_value || tmp->index == 0)
+            if(tmp->content > max_value && tmp->index == 0)
             {
                 max_value = tmp->content;
                 max_node = tmp;

@@ -39,4 +39,5 @@ void    rrr(t_list **a, t_list **b);
 void    rrot(t_list **s);
 t_list	*get_before_bottom(t_list *stack);
 t_list	*get_bottom(t_list *stack);
+int	get_h_index(t_list *s);
 #endif

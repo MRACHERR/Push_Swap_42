@@ -29,5 +29,12 @@ int main(int argc, char **argv)
     initial_stack(argc, argv, &a);
     get_index(&a);
     sort(&a,&b);
+    t_list *tmp;
+    tmp = a;
+    while (tmp)
+    {
+        ft_printf("%d ", (tmp)->content);
+        tmp = tmp->next;
+    }
     free_stack(a);
 }

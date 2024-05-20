@@ -21,6 +21,5 @@ void pa(t_list **a, t_list **b)
 void pb(t_list **a, t_list **b)
 {
     ft_printf("pb\n");
-    pa(b, a);
-    pa(b, a);
+    push(a, b);
 }
