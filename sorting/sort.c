@@ -28,8 +28,7 @@ void sort4(t_list **a, t_list **b)
     size = ft_lstsize(*a);
     while ((size - count > 3) && i < size)
     {
-
-        if ((*a)->index < 2)
+        if ((*a)->index < 1)
         {
             pb(a, b);
             count++;

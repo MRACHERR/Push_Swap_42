@@ -121,12 +121,12 @@ void    sort(t_list **a, t_list **b)
 		sort4(a, b);
 	else if (ft_lstsize(*a) == 5)
 		sort5(a, b);
-    // else
-	// {
-	// 	if (ft_lstsize(*a) <= 100)
-	// 		push_a_to_b(a, b, 15);
-	// 	else if (ft_lstsize(*a) >= 100)
-	// 		push_a_to_b(a, b, 35);
-	// 	turn_to_a(a, b);
-	// }
+    else
+	{
+		if (ft_lstsize(*a) <= 100)
+			push_b(a, b, 20);
+		else if (ft_lstsize(*a) > 100)
+			push_b(a, b, 50);
+		push_a(a, b);
+	}
 }
