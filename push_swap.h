@@ -40,4 +40,9 @@ void    rrot(t_list **s);
 t_list	*get_before_bottom(t_list *stack);
 t_list	*get_bottom(t_list *stack);
 int	get_h_index(t_list *s);
+void	push_a(t_list **a, t_list **b);
+void	push_b(t_list **a, t_list **b, int del);
+void    sb(t_list **b);
+int	h_index_section(t_list **b, int h);
+int    arg_verification(int argc, char **argv);
 #endif

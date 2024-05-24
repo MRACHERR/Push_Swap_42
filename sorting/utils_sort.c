@@ -35,25 +35,25 @@ void	push_b(t_list **a, t_list **b, int del)
 	int	i;
 
 	i = 0;
-	while (i < ft_lstsize(*a))
+	while (ft_lstsize(*a) > 0)
 	{
 		if ((*a)->index <= i)
 		{
 			pb(a,b);
 			i++;
 		}
-		if ((*a)->index <= (del + i))
+		else if ((*a)->index <= (del + i))
 		{
 			pb(a,b);
 			rb(b);
 			i++;
 		}
 		else
-			ra(b);
+			ra(a);
 	}
 }
 
-int	h_index_finder(t_list **b, int h)
+int	h_index_section(t_list **b, int h)
 {
 	t_list	*tmp;
 	int	i;
@@ -61,8 +61,8 @@ int	h_index_finder(t_list **b, int h)
 
 	size = ft_lstsize(*b);
 	tmp = *b;
-
-	while (tmp && i < size/2)
+	i = 0;
+	while (tmp && i < size / 2)
 	{
 		if (tmp->index == h)
 			return (1);
@@ -77,7 +77,7 @@ void	push_a(t_list **a, t_list **b)
 	int h_index;
 
 	h_index = get_h_index(*b);
-	while (0 < ft_lstsize(*a))
+	while (0 < ft_lstsize(*b))
 	{
 		if ((*b)->index == h_index)
 		{
@@ -87,11 +87,12 @@ void	push_a(t_list **a, t_list **b)
 		else if ((*b)->next->index == h_index)
 		{
 			sb(b);
+			pa(a,b);
 			h_index--;
 		}
 		else
 		{
-			if (h_index_finder(*b, h_index) == 1)
+			if (h_index_section(b, h_index))
 				rb(b);
 			else
 				rrb(b);
