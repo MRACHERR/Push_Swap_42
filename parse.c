@@ -60,7 +60,9 @@ void    there_is_deplicate(char **list)
     int j;
 
     i = 0;
-    if (ft_atoi(list[0]) < INT_MIN || ft_atoi(list[0]) > INT_MAX)
+    // ft_printf("%s\n",list[0]);
+//    ft_printf("%d\n",ft_atoi(list[0]));
+    if ((ft_atoi(list[0]) < INT_MIN || ft_atoi(list[0]) > INT_MAX))
 		return (handle_errors("verify int input"));
     j = 0;
     while (list[i])

@@ -23,19 +23,22 @@ int main(int argc, char **argv)
     a = NULL;
     b = NULL;
     if (argc == 1)
-        return (handle_errors("invalid argument"),0);
+        return (0);
     arg_verify(argc, argv);
     if (is_sorted(argc, argv))
 		return (0);
+    // ft_printf("s\n");
     initial_stack(argc, argv, &a);
+    if (ft_lstsize(a) == 1)
+        return 0;
     get_index(&a);
     sort(&a,&b);
-    // t_list *tmp;
-    // tmp = a;
-    // while (tmp)
-    // {
-    //     ft_printf("%d ", (tmp)->content);
-    //     tmp = tmp->next;
-    // }
+    t_list *tmp;
+    tmp = a;
+    while (tmp)
+    {
+        ft_printf("%d\t", (tmp)->content);
+        tmp = tmp->next;
+    }
     free_stack(a);
 }

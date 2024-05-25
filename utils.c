@@ -28,13 +28,16 @@ int is_sorted(int   argc, char **argv)
     i = 0;
     j = 0;
     list = get_list_from_arg(argc,argv);
+    // ft_printf("%s\n",list[1]);
 
-    while (argv[i])
+    while (list[i])
     {
         j = i + 1;
-        while(argv[j])
+        while(list[j])
         {
-            if (ft_atoi(argv[i])> ft_atoi(argv[j]))
+            //  ft_printf("%d\n",atoi(list[i]));
+            //   ft_printf("%s\n",list[1]);
+            if (ft_atoi(list[i]) > ft_atoi(list[j]))
                 return (list_free(list),0);
             j++;
         }
@@ -49,7 +52,6 @@ char    **get_list_from_arg(int argc, char **argv)
     char    **list;
     char    *args;
 
-    list = NULL;
     args = NULL;
     i = 1;
     while (i < argc)
@@ -58,8 +60,11 @@ char    **get_list_from_arg(int argc, char **argv)
         args = ft_strjoin(args, " ");
         i++;
     }
+    //ft_printf("%s\n", args);
     list = ft_split(args, ' ');
+    //ft_printf("%d\n",ft_atoi(list[0]) );
     free(args);
+    // ft_printf("%s\n",list[0]);
     return(list);
 }
 
@@ -73,6 +78,7 @@ void    initial_stack(int argc, char **argv, t_list **a)
     i = 0;
     while (list[i])
     {
+        // ft_printf("%s\n",list[i]);
         new = ft_lstnew(atoi(list[i]));
         new->index = 0;
         ft_lstadd_back(a, new);
