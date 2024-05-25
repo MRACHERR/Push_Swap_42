@@ -1,17 +1,17 @@
 #include "../push_swap.h"
 
-int is_stack_sorted(t_list *b)
+int	is_stack_sorted(t_list *b)
 {
-    t_list  *tmp;
+	t_list	*tmp;
 
-    tmp = b;
-    while (tmp->next)
-    {
-        if (tmp->content > tmp->next->content)
-            return (0);
-        tmp = tmp->next;
-    }
-    return (1);
+	tmp = b;
+	while (tmp->next)
+	{
+		if (tmp->content > tmp->next->content)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }
 
 int	get_h_index(t_list *s)
@@ -39,12 +39,12 @@ void	push_b(t_list **a, t_list **b, int del)
 	{
 		if ((*a)->index <= i)
 		{
-			pb(a,b);
+			pb(a, b);
 			i++;
 		}
 		else if ((*a)->index <= (del + i))
 		{
-			pb(a,b);
+			pb(a, b);
 			rb(b);
 			i++;
 		}
@@ -56,8 +56,8 @@ void	push_b(t_list **a, t_list **b, int del)
 int	h_index_section(t_list **b, int h)
 {
 	t_list	*tmp;
-	int	i;
-	int size;
+	int		i;
+	int		size;
 
 	size = ft_lstsize(*b);
 	tmp = *b;
@@ -67,7 +67,7 @@ int	h_index_section(t_list **b, int h)
 		if (tmp->index == h)
 			return (1);
 		tmp = tmp->next;
-		i++; 
+		i++;
 	}
 	return (0);
 }
@@ -81,13 +81,13 @@ void	push_a(t_list **a, t_list **b)
 	{
 		if ((*b)->index == h_index)
 		{
-			pa(a,b);
+			pa(a, b);
 			h_index--;
 		}
 		else if ((*b)->next->index == h_index)
 		{
 			sb(b);
-			pa(a,b);
+			pa(a, b);
 			h_index--;
 		}
 		else
