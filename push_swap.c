@@ -14,10 +14,28 @@ void	free_stack(t_list *list)
 	}
 }
 
+void	list_free(char **list)
+{
+	int	i;
+
+	i = 0;
+	while (list[i])
+		free(list[i++]);
+	free(list);
+}
+
+void	handle_errors(char *error_msg)
+{
+	write(STDERR_FILENO, "Error: ", 7);
+	write(STDERR_FILENO, error_msg, ft_strlen(error_msg));
+	write(STDERR_FILENO, "\n", 1);
+	exit(1);
+}
+
 int	main(int argc, char **argv)
 {
-	t_list *a;
-	t_list *b;
+	t_list	*a;
+	t_list	*b;
 
 	a = NULL;
 	b = NULL;
@@ -26,18 +44,10 @@ int	main(int argc, char **argv)
 	arg_verify(argc, argv);
 	if (is_sorted(argc, argv))
 		return (0);
-	// ft_printf("s\n");
 	initial_stack(argc, argv, &a);
 	if (ft_lstsize(a) == 1)
 		return (0);
 	get_index(&a);
 	sort(&a, &b);
-	t_list *tmp;
-	tmp = a;
-	while (tmp)
-	{
-		ft_printf("%d\t", (tmp)->content);
-		tmp = tmp->next;
-	}
 	free_stack(a);
 }

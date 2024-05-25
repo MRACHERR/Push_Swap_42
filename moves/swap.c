@@ -19,6 +19,7 @@ void	swap(t_list **s)
 		ft_lstadd_front(s, p2);
 	}
 }
+
 void	sa(t_list **a)
 {
 	ft_printf("sa\n");

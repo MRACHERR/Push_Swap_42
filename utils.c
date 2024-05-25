@@ -1,23 +1,5 @@
 #include "push_swap.h"
 
-void	handle_errors(char *error_msg)
-{
-	write(STDERR_FILENO, "Error: ", 7);
-	write(STDERR_FILENO, error_msg, ft_strlen(error_msg));
-	write(STDERR_FILENO, "\n", 1);
-	exit(1);
-}
-
-void	list_free(char **list)
-{
-	int	i;
-
-	i = 0;
-	while (list[i])
-		free(list[i++]);
-	free(list);
-}
-
 int	is_sorted(int argc, char **argv)
 {
 	int		i;
@@ -27,14 +9,11 @@ int	is_sorted(int argc, char **argv)
 	i = 0;
 	j = 0;
 	list = get_list_from_arg(argc, argv);
-	// ft_printf("%s\n",list[1]);
 	while (list[i])
 	{
 		j = i + 1;
 		while (list[j])
 		{
-			//  ft_printf("%d\n",atoi(list[i]));
-			//   ft_printf("%s\n",list[1]);
 			if (ft_atoi(list[i]) > ft_atoi(list[j]))
 				return (list_free(list), 0);
 			j++;
@@ -58,11 +37,8 @@ char	**get_list_from_arg(int argc, char **argv)
 		args = ft_strjoin(args, " ");
 		i++;
 	}
-	//ft_printf("%s\n", args);
 	list = ft_split(args, ' ');
-	//ft_printf("%d\n",ft_atoi(list[0]) );
 	free(args);
-	// ft_printf("%s\n",list[0]);
 	return (list);
 }
 
@@ -76,7 +52,6 @@ void	initial_stack(int argc, char **argv, t_list **a)
 	i = 0;
 	while (list[i])
 	{
-		// ft_printf("%s\n",list[i]);
 		new = ft_lstnew(atoi(list[i]));
 		new->index = 0;
 		ft_lstadd_back(a, new);
@@ -93,7 +68,6 @@ void	get_index(t_list **a)
 	t_list	*max_node;
 
 	max_index = ft_lstsize(*a) - 1;
-	//ft_printf("%d", max_index);
 	while (max_index)
 	{
 		tmp = *a;

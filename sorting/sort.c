@@ -5,7 +5,6 @@ void	sort3(t_list **a)
 	int	h_index;
 
 	h_index = get_h_index(*a);
-	// ft_printf("%d", h_index);
 	if ((*a)->index == h_index)
 		ra(a);
 	else
@@ -43,9 +42,9 @@ void	sort4(t_list **a, t_list **b)
 
 void	sort5(t_list **a, t_list **b)
 {
-	int count;
-	int i;
-	int size;
+	int	count;
+	int	i;
+	int	size;
 
 	count = 0;
 	i = 0;

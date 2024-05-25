@@ -74,7 +74,7 @@ int	h_index_section(t_list **b, int h)
 
 void	push_a(t_list **a, t_list **b)
 {
-	int h_index;
+	int	h_index;
 
 	h_index = get_h_index(*b);
 	while (0 < ft_lstsize(*b))

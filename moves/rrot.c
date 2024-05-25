@@ -29,23 +29,12 @@ void	rrb(t_list **s)
 	rrot(s);
 }
 
-void	rrr(t_list **a, t_list **b)
-{
-	ft_printf("rrr\n");
-	rrot(a);
-	rrot(b);
-}
-
-/*	Returns the last element of the stack. */
-
 t_list	*get_bottom(t_list *stack)
 {
 	while (stack && stack->next != NULL)
 		stack = stack->next;
 	return (stack);
 }
-
-/* Returns de element before the bottom element */
 
 t_list	*get_before_bottom(t_list *stack)
 {
