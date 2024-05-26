@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: acherraq <acherraq@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/05/26 12:38:44 by acherraq          #+#    #+#              #
+#    Updated: 2024/05/26 12:38:45 by acherraq         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = push_swap
 SOURCES = push_swap.c utils.c parse.c linked_list.c sorting/sort.c sorting/utils_sort.c moves/push.c moves/rot.c moves/rrot.c moves/swap.c
 OBJECTS = $(SOURCES:.c=.o)
@@ -12,24 +24,6 @@ $(NAME) : $(OBJECTS) printf/libftprintf.a libft/libft.a
 	$(CC) $(CFLAGS) -c $< -o $@ 
 
 all: $(NAME)
-
-
-
-
-# push: server.o minitalk.h printf/libftprintf.a libft/libft.a
-# 	$(CC) $(CFLAGS) -o $@ $< -Llibft -lft -Lprintf -lftprintf
-
-# client: client.o minitalk.h printf/libftprintf.a libft/libft.a
-# 	$(CC) $(CFLAGS) -o $@ $< -Llibft -lft -Lprintf -lftprintf
-
-# server_bonus: server_bonus.o minitalk_bonus.h printf/libftprintf.a libft/libft.a
-# 	$(CC) $(CFLAGS) -o $@ $< -Llibft -lft -Lprintf -lftprintf
-
-# client_bonus: client_bonus.o minitalk_bonus.h printf/libftprintf.a libft/libft.a
-# 	$(CC) $(CFLAGS) -o $@ $< -Llibft -lft -Lprintf -lftprintf
-	
-# %.o: %.c | libft printf
-# 	$(CC) -c $(CFLAGS) $<
 
 libft:
 	make -C libft
