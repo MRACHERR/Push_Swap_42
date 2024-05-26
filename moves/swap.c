@@ -32,9 +32,3 @@ void	sb(t_list **b)
 	swap(b);
 }
 
-void	ss(t_list **a, t_list **b)
-{
-	ft_printf("ss\n");
-	sa(a);
-	sb(b);
-}

@@ -20,7 +20,7 @@ void	arg_verify(int argc, char **argv)
 		while (list[i][j])
 		{
 			if (!ft_isdigit(list[i][j]))
-				(list_free(list), handle_errors("error not digit"));
+				(list_free(list), handle_errors(""));
 			j++;
 		}
 		i++;
@@ -48,7 +48,7 @@ void	is_empty(char **argv)
 			j++;
 		}
 		if (find == 0 || argv[i][0] == '\0')
-			handle_errors("empty or invalid input");
+			handle_errors("");
 		i++;
 	}
 }
@@ -60,16 +60,17 @@ void	there_is_deplicate(char **list)
 
 	i = 0;
 	if ((ft_atoi(list[0]) > INT_MAX))
-		return (handle_errors("verify int input"));
+		return (handle_errors(""));
 	j = 0;
 	while (list[i])
 	{
 		j = i + 1;
 		while (list[j])
 		{
-			if (ft_atoi(list[i]) == ft_atoi(list[j]) || (ft_atoi(list[j]) > INT_MAX))
+			if (ft_atoi(list[i]) == ft_atoi(list[j])
+				|| (ft_atoi(list[j]) > INT_MAX))
 			{
-				return (handle_errors("error Deplicate or invalid input"));
+				return (handle_errors(""));
 			}
 			j++;
 		}

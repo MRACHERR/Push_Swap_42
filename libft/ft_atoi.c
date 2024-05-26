@@ -41,12 +41,10 @@ long	ft_atoi(const char *str)
 	{
 		temp = nbr;
 		nbr = (nbr * 10) + (str[i] - '0');
-		// if (temp != nbr / 10 && sign == 1)
-		// 	return (-1);
-		// if (temp != nbr / 10 && sign == -1)
-		// 	return (0);
+		if (temp != nbr / 10)
+			return (2147483649);
 		if (nbr > 2147483647 || nbr < -2147483648)
-			return(2147483649);
+			return (2147483649);
 		i++;
 	}
 	return (sign * nbr);

@@ -24,10 +24,3 @@ void	rb(t_list **s)
 	ft_printf("rb\n");
 	rot(s);
 }
-
-void	rr(t_list **a, t_list **b)
-{
-	ft_printf("rr\n");
-	rot(a);
-	rot(b);
-}

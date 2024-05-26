@@ -26,7 +26,7 @@ void	list_free(char **list)
 
 void	handle_errors(char *error_msg)
 {
-	write(STDERR_FILENO, "Error: ", 7);
+	write(STDERR_FILENO, "Error", 5);
 	write(STDERR_FILENO, error_msg, ft_strlen(error_msg));
 	write(STDERR_FILENO, "\n", 1);
 	exit(1);
@@ -45,8 +45,6 @@ int	main(int argc, char **argv)
 	if (is_sorted(argc, argv))
 		return (0);
 	initial_stack(argc, argv, &a);
-	// if (ft_lstsize(a) == 1)
-	// 	return (0);
 	get_index(&a);
 	sort(&a, &b);
 	free_stack(a);
