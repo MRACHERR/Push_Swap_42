@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acherraq <acherraq@student.42.fr>          +#+  +:+       +#+        */
+/*   By: hamrachi <hamrachi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 18:07:43 by acherraq          #+#    #+#             */
-/*   Updated: 2024/03/31 13:31:15 by acherraq         ###   ########.fr       */
+/*   Updated: 2024/05/25 17:20:18 by hamrachi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,12 @@ long	ft_atoi(const char *str)
 	{
 		temp = nbr;
 		nbr = (nbr * 10) + (str[i] - '0');
-		if (temp != nbr / 10 && sign == 1)
-			return (-1);
-		if (temp != nbr / 10 && sign == -1)
-			return (0);
+		// if (temp != nbr / 10 && sign == 1)
+		// 	return (-1);
+		// if (temp != nbr / 10 && sign == -1)
+		// 	return (0);
+		if (nbr > 2147483647 || nbr < -2147483648)
+			return(2147483649);
 		i++;
 	}
 	return (sign * nbr);

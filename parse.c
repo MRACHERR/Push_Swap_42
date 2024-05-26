@@ -59,7 +59,7 @@ void	there_is_deplicate(char **list)
 	int	j;
 
 	i = 0;
-	if ((ft_atoi(list[0]) < INT_MIN || ft_atoi(list[0]) > INT_MAX))
+	if ((ft_atoi(list[0]) > INT_MAX))
 		return (handle_errors("verify int input"));
 	j = 0;
 	while (list[i])
@@ -67,8 +67,7 @@ void	there_is_deplicate(char **list)
 		j = i + 1;
 		while (list[j])
 		{
-			if (ft_atoi(list[i]) == ft_atoi(list[j])
-				|| (ft_atoi(list[j]) < INT_MIN || ft_atoi(list[j]) > INT_MAX))
+			if (ft_atoi(list[i]) == ft_atoi(list[j]) || (ft_atoi(list[j]) > INT_MAX))
 			{
 				return (handle_errors("error Deplicate or invalid input"));
 			}

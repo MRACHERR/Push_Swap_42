@@ -45,8 +45,8 @@ int	main(int argc, char **argv)
 	if (is_sorted(argc, argv))
 		return (0);
 	initial_stack(argc, argv, &a);
-	if (ft_lstsize(a) == 1)
-		return (0);
+	// if (ft_lstsize(a) == 1)
+	// 	return (0);
 	get_index(&a);
 	sort(&a, &b);
 	free_stack(a);

@@ -38,6 +38,8 @@ char	**get_list_from_arg(int argc, char **argv)
 		i++;
 	}
 	list = ft_split(args, ' ');
+	if (!list)
+		exit(1);
 	free(args);
 	return (list);
 }
@@ -53,6 +55,8 @@ void	initial_stack(int argc, char **argv, t_list **a)
 	while (list[i])
 	{
 		new = ft_lstnew(atoi(list[i]));
+		if (!new)
+			exit(1);
 		new->index = 0;
 		ft_lstadd_back(a, new);
 		i++;
@@ -102,9 +106,9 @@ void	sort(t_list **a, t_list **b)
 	else
 	{
 		if (ft_lstsize(*a) <= 100)
-			push_b(a, b, 20);
+			push_b(a, b, 15);
 		else if (ft_lstsize(*a) > 100)
-			push_b(a, b, 50);
+			push_b(a, b, 30);
 		push_a(a, b);
 	}
 }
