@@ -43,9 +43,9 @@ char	**get_list_from_arg(int argc, char **argv)
 
 	args = NULL;
 	i = 1;
-	while (i++ < argc)
+	while (i < argc)
 	{
-		args = ft_strjoin(args, argv[i]);
+		args = ft_strjoin(args, argv[i++]);
 		if (!args)
 			return (free(args), NULL);
 		args = ft_strjoin(args, " ");
