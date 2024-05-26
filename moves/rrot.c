@@ -6,6 +6,8 @@ void	rrot(t_list **s)
 	t_list	*tail;
 	t_list	*new_tail;
 
+	if (!(*s) || !(*s)->next)
+		return ;
 	if (ft_lstsize(*s) > 1)
 	{
 		tail = get_bottom(*s);

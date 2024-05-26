@@ -4,6 +4,8 @@ void	rot(t_list **s)
 {
 	t_list	*tmp;
 
+	if (!(*s) || !(*s)->next)
+		return ;
 	if (ft_lstsize(*s) > 1)
 	{
 		tmp = *s;

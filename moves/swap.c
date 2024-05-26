@@ -7,7 +7,7 @@ void	swap(t_list **s)
 
 	p1 = NULL;
 	p2 = NULL;
-	if (*s && (*s)->next)
+	if ((*s && (*s)->next) || !s)
 	{
 		p1 = *s;
 		*s = (*s)->next;
