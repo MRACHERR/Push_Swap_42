@@ -6,7 +6,7 @@
 /*   By: acherraq <acherraq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 12:38:21 by acherraq          #+#    #+#             */
-/*   Updated: 2024/05/26 12:50:24 by acherraq         ###   ########.fr       */
+/*   Updated: 2024/05/26 15:42:30 by acherraq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,25 @@ char	**get_list_from_arg(int argc, char **argv)
 
 	args = NULL;
 	i = 1;
-	while (i < argc)
+	while (i++ < argc)
 	{
 		args = ft_strjoin(args, argv[i]);
+		if (!args)
+			return (free(args), NULL);
 		args = ft_strjoin(args, " ");
-		i++;
+		if (!args)
+		{
+			free(args);
+			handle_errors();
+		}
 	}
 	list = ft_split(args, ' ');
 	if (!list)
-		exit(1);
-	free(args);
-	return (list);
+	{
+		free(args);
+		handle_errors();
+	}
+	return (free(args), list);
 }
 
 void	initial_stack(int argc, char **argv, t_list **a)

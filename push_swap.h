@@ -6,7 +6,7 @@
 /*   By: acherraq <acherraq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 12:38:29 by acherraq          #+#    #+#             */
-/*   Updated: 2024/05/26 12:38:30 by acherraq         ###   ########.fr       */
+/*   Updated: 2024/05/26 14:40:30 by acherraq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 char	**get_list_from_arg(int argc, char **argv);
 void	arg_verify(int argc, char **argv);
 void	is_empty(char **argv);
-void	handle_errors(char *error_msg);
+void	handle_errors(void);
 void	initial_stack(int argc, char **argv, t_list **a);
 t_list	*ft_lstnew(int content);
 void	ft_lstadd_back(t_list **lst, t_list *new);

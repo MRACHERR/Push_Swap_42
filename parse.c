@@ -6,7 +6,7 @@
 /*   By: acherraq <acherraq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 12:38:40 by acherraq          #+#    #+#             */
-/*   Updated: 2024/05/26 12:38:41 by acherraq         ###   ########.fr       */
+/*   Updated: 2024/05/26 15:14:36 by acherraq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ void	arg_verify(int argc, char **argv)
 	list = NULL;
 	is_empty(argv);
 	list = get_list_from_arg(argc, argv);
+	if (!list)
+		handle_errors();
 	there_is_deplicate(list);
 	i = 0;
-	j = 0;
 	while (list[i])
 	{
 		j = 0;
@@ -32,7 +33,7 @@ void	arg_verify(int argc, char **argv)
 		while (list[i][j])
 		{
 			if (!ft_isdigit(list[i][j]))
-				(list_free(list), handle_errors(""));
+				(list_free(list), handle_errors());
 			j++;
 		}
 		i++;
@@ -46,8 +47,6 @@ void	is_empty(char **argv)
 	int	j;
 	int	find;
 
-	find = 0;
-	j = 0;
 	i = 1;
 	while (argv[i])
 	{
@@ -60,7 +59,7 @@ void	is_empty(char **argv)
 			j++;
 		}
 		if (find == 0 || argv[i][0] == '\0')
-			handle_errors("");
+			handle_errors();
 		i++;
 	}
 }
@@ -72,7 +71,7 @@ void	there_is_deplicate(char **list)
 
 	i = 0;
 	if ((ft_atoi(list[0]) > INT_MAX))
-		return (handle_errors(""));
+		return (handle_errors());
 	j = 0;
 	while (list[i])
 	{
@@ -82,7 +81,7 @@ void	there_is_deplicate(char **list)
 			if (ft_atoi(list[i]) == ft_atoi(list[j])
 				|| (ft_atoi(list[j]) > INT_MAX))
 			{
-				return (handle_errors(""));
+				return (handle_errors());
 			}
 			j++;
 		}

@@ -6,7 +6,7 @@
 /*   By: acherraq <acherraq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 12:38:32 by acherraq          #+#    #+#             */
-/*   Updated: 2024/05/26 12:38:33 by acherraq         ###   ########.fr       */
+/*   Updated: 2024/05/26 15:40:36 by acherraq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,9 @@ void	list_free(char **list)
 	free(list);
 }
 
-void	handle_errors(char *error_msg)
+void	handle_errors(void)
 {
 	write(STDERR_FILENO, "Error", 5);
-	write(STDERR_FILENO, error_msg, ft_strlen(error_msg));
 	write(STDERR_FILENO, "\n", 1);
 	exit(1);
 }
